@@ -16,8 +16,10 @@ const onPlay = function(currentTime) {
 idPlayer.on('pause', throttle(onPlay, 1000));
 
 savedTime = localStorage.getItem(PLAYER_KEY);
-idPlayer.setCurrentTime(savedTime).then(function() {
-    
+idPlayer.setCurrentTime(savedTime).then(function(e) {
+    if (savedTime) {
+        idPlayer.on('play', onPlay);
+    }
 }).catch(function(error) {
     switch (error.name) {
         case 'RangeError':
