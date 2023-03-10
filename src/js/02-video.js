@@ -12,7 +12,7 @@ const onPlay = function(currentTime) {
 
 idPlayer.on('pause', throttle(onPlay, 1000));
 
-savedTime = localStorage.getItem(PLAYER_KEY);
+const savedTime = localStorage.getItem(PLAYER_KEY);
 idPlayer.setCurrentTime(savedTime).then(function() {
 
 }).catch(function(error) {
