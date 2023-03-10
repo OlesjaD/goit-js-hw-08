@@ -5,9 +5,6 @@ const PLAYER_KEY = "videoplayer-current-time";
 const idPlayer = new player('vimeo-player');
 
 const onPlay = function(currentTime) {
-    duration: 61.857
-    percent: 0.049
-    seconds: 3.034
     const timeVideoPause = currentTime.seconds;
     // console.log('time:', timeVideoPause);
     localStorage.setItem(PLAYER_KEY, timeVideoPause);
